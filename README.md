@@ -1,5 +1,5 @@
--------------------------TreeGen--------------------------------
------------Interactive tree growth with environment-------------
+---TreeGen
+---Interactive tree growth model with environment sensitivity
 
 
 Owner: Damith Jinasena
