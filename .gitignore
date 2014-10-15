@@ -1,0 +1,8 @@
+*.obj
+*.am
+*.tlog
+*.l
+*.log
+*.manifest
+*.user
+*.pdb
