@@ -50,21 +50,16 @@ candidate evalEnvInput();
 void addGrowthCandidates(int id);
 void addTreePoints(point newNode, int id, char branchType);
 void drawTree();
-double calcBranchRadius(branch br);
 void drawSource();
 void drawFloor();
 void drawBoundry();
 void writePOVoutput();
 void writePOVoutputIncremental(); // to be used when the show_tree_growth = true
-void drawLeaf(ofstream& outFile, branch br);
-void drawTwig(ofstream& outFile, branch br);
-void drawTwigLeaf(ofstream& outFile, branch br); // to be used with drawTwig()
 
 bool validateStrahlerNumber(int id);
 int updateSubTreeStrahlerNumbers(int id);
 int updateParentStrahlerNumber(int id);
 bool regenerateSubTree(int startNode); // re generate the sub tree after Strahler Number change
-bool isTerminalBranch(branch br); // need for POV output
 bool identifyCollision(point point_);
 point locateSourceMiddle(double branchLength_);
 void drawSourcePOV(); //draw light source for POV
@@ -504,7 +499,6 @@ int calcParentNodeID(int id)
 // this function evaluates the growth candidates 
 // against the enviromental input and decide
 // which candidate to grow into a branch
-
 candidate evalEnvInputNew()
 {
 #pragma region private variables
@@ -704,7 +698,6 @@ double calcBranchRadiusNew(branchNew br)
 
 // this function returns true if sibiling
 // Strahler Number is equal to current Strahler Number
-
 bool validateStrahlerNumberNew(int id)
 {
 
@@ -827,29 +820,6 @@ int updateParentStrahlerNumberNew(int id)
 	//cout << "new strahler_number: " << node_.strahler_number << endl;
 	return nodeToUpdate_;
 	
-}
-
-bool isTerminalBranch(branch br)
-{
-	node node_;
-	int child1_sth_no;
-	int child2_sth_no;
-
-	node_ = treeTopology.at(2*br.nodeId); // check child 1
-	child1_sth_no = node_.strahler_number;
-
-	node_ = treeTopology.at(2*br.nodeId + 1); // check child 1
-	child2_sth_no = node_.strahler_number;
-
-	if (child1_sth_no == 0 && child2_sth_no == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-
 }
 
 // this method will identify whether given point

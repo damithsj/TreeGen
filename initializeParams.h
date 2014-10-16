@@ -30,13 +30,6 @@ struct candidate
 	*/
 };
 // structure to hold data related to branch
-struct branch
-{
-	int nodeId;
-	point currNode;
-	point prevNode;
-};
-
 struct branchNew
 {
 	int nodeId;
@@ -65,23 +58,7 @@ struct node
     l - lateral negative
 	*/
 };
-
-// to be user in future - binary tree data structure
-struct node1
-{
-	node *terminalNode;
-	node *lateralNode;
-	point coordinates;
-	int strahler_number;
-	char branch_type;
-	/* valid branch types
-	T - terminal
-	L - lateral
-    t - terminal negative
-    l - lateral negative
-	*/
-};
-
+// structure to hold data of a obstacle (cuboid)
 struct obstacle
 {
 	double obsXStart;
@@ -93,7 +70,6 @@ struct obstacle
 	double obsZEnd;
 };
 
-
 namespace constants
 {
 	// Definitions of the Grid
@@ -102,8 +78,8 @@ namespace constants
 	extern int DEPTH_LENGTH; // depth
 
 	// SOR parameters
-	extern double CUTOFF;
-    extern double ORP; // over reaction parameter
+	extern double CUTOFF; // breaking value to stop the relaxation
+    extern double ORP; // over reaction parameter (usually se between 1.2 and 1.4)
 
 	// tree growth bundry
 	extern double MIN_X;
