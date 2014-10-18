@@ -411,7 +411,7 @@ void addObstacles()
 			for (int k = startPosition__.depth; k >= endPosition__.depth; k--)
 			{
 				grid[i][j][k] = 0;
-				source_distrib[i][j][k] = 0;
+				source_distrib[i][j][k] = 1;
 			}			
 		}		
 	}	
