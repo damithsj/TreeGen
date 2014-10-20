@@ -40,3 +40,13 @@ libconfig/wincompat.h
 *.cache
 *.suo
 *.filters
+*.idb
+*.exp
+Debug/laplace_3d_sth_3_rand.exe
+Debug/libconfig++.lib
+Debug/libconfig++_d.dll
+Release/libconfig++.dll
+Release/libconfig++.dll
+Release/libconfig++.lib
+laplace_2d.vcxproj
+Release/libconfig++.dll
